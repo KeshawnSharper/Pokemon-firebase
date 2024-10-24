@@ -40,16 +40,16 @@ function Login({ signOut, user }) {
             [e.target.name]:e.target.value})
             console.log(value)
   }
-  const handleSubmit = (e) => {
-      e.preventDefault()
-   axios.post("http://127.0.0.1:8000/api/token/",value).then(
-       res => {
-        localStorage.setItem("token",res.data.access)
-        localStorage.setItem("username",value.username)
-        // props.changeComponent("Home")
-       }
-   )
-  }
+//   const handleSubmit = (e) => {
+//       e.preventDefault()
+//    axios.post("http://127.0.0.1:8000/api/token/",value).then(
+//        res => {
+//         localStorage.setItem("token",res.data.access)
+//         localStorage.setItem("username",value.username)
+//         // props.changeComponent("Home")
+//        }
+//    )
+//   }s
   
 //   const classes = useStyles();
 
@@ -58,7 +58,7 @@ function Login({ signOut, user }) {
     {!user ? 
     <div className={`form`}>
      <h2> Login </h2> 
-    <form  noValidate autoComplete="off" onSubmit={(e) => handleSubmit(e)}>
+    <form  noValidate autoComplete="off" s>
   
       <TextField name="username" value={value.username} id="outlined-basic" label="User Name" variant="outlined" onChange={(e) => handleChange(e)}/>
       <TextField value={value.password} id="outlined-basic" label="Password" variant="outlined" onChange={(e) => handleChange(e)} name="password" /> 
