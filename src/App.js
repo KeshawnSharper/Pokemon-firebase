@@ -6,22 +6,40 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
+import { connect } from "react-redux";
 import "./styles.css";
 import "./Home.css";
+import Home from "./Home";
+import { getCharacters,getLiked } from "./Redux/actions";
+import React, {useEffect,useState} from "react"
 
-
-function App() {
-  return (
+function App({getCharacters}) {
+  useEffect(() => {
+    getCharacters();
+  }, []);
+    return (
     <BrowserRouter>
       <Routes>
     <Route path ="/" element={
       <Login />
     }
     />
+     <Route path="/home" element={
+//             <Protected>
+             <Home />
+            // </Protected>
+         } />
     </Routes>
     </BrowserRouter>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCharacters: () => {
+      dispatch(getCharacters());
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);
