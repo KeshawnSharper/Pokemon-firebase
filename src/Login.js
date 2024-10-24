@@ -1,16 +1,16 @@
 import React, { useEffect,useState } from "react";
 // import axios from "axios";
 import "./Home.css";
+// import Button from '@mui/material/Button';
 
 // import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@mui/material/TextField';
-// import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
-// import '@aws-amplify/ui-react/styles.css';
-// import config from '../amplifyconfiguration.json';
+import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import config from './amplifyconfiguration.json';
 import  { Navigate } from 'react-router-dom'
-// import { Amplify } from 'aws-amplify';
-// Amplify.configure(config)
-import Button from '@mui/material/Button';
+import { Amplify } from 'aws-amplify';
+Amplify.configure(config)
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -84,4 +84,4 @@ function Login({ signOut, user }) {
 
 
 
-export default Login
+export default withAuthenticator(Login)
