@@ -12,7 +12,6 @@ import  { Navigate } from 'react-router-dom'
 // Amplify.configure(config)
 import Button from '@mui/material/Button';
 
-
 // const useStyles = makeStyles((theme) => ({
 //   root: {
 //     '& > *': {
