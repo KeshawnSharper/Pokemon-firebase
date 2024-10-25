@@ -35,9 +35,9 @@ function getModalStyle() {
 // }));
 
 function Character(props) {
-  // useEffect(() => {
-  //   getLiked(JSON.parse(localStorage.getItem("user")).username)
-  // },[])
+  useEffect(() => {
+    getLiked(JSON.parse(localStorage.getItem("user")).username)
+  },[])
   const { name, url, loading, character } = props;
   console.log("hey", props.isLiked[`${character.name}`]);
   // console.log(JSON.parse(localStorage.getItem("user")).username);
