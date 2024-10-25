@@ -16,6 +16,7 @@ import React, {useEffect,useState} from "react"
 function App({getCharacters}) {
   useEffect(() => {
     getCharacters();
+    getLiked();
   }, []);
     return (
     <BrowserRouter>

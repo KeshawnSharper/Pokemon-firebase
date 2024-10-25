@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Characters from "./Characters/Characters";
-// import LikedCharacters from "./LikedCharacters/LikedCharacters";
+import LikedCharacters from "./LikedCharacters/LikedCharacters";
 import "./Home.css";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
@@ -10,7 +10,7 @@ const Home = ({user,signOut,getLiked}) => {
   const [component, setComponent] = useState(true);
   const [pressed,setPressed] = useState(false)
   useEffect(() => {
-    // getLiked(JSON.parse(localStorage.getItem("user")))
+    getLiked(JSON.parse(localStorage.getItem("user")))
   },[pressed])
   const click = () => {
     SetSearch(true);
@@ -136,10 +136,8 @@ const Home = ({user,signOut,getLiked}) => {
     <>
     </>
     : 
-    <>
-    hi
-    </>
-    // <LikedCharacters />
+   
+    <LikedCharacters />
     }
     
   </> } </>

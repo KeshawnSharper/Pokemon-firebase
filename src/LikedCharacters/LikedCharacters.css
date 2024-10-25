@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-bottom: 500px;
+  
+}
+@media only screen and (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: auto ;
+
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+
+  }
+}
+.grid-item {
+  margin-bottom: 20rem
+}
